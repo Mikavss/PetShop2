@@ -10,4 +10,11 @@ public class Dog extends Animal {
         System.out.println("Wav wav!!");
     }
 
+    public void voice(byte foodCan) {
+        if (foodCan < 5) {
+            System.out.println("Wav wav!!");
+        } else {
+            System.out.println("...........");
+        }
+    }
 }
