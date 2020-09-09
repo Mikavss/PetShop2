@@ -1,8 +1,8 @@
 package org.example.pet;
 
 public class Cat extends Animal {
-    public Cat(String name, int age) {
-        super(name, age);
+    public Cat(String name, int age, double price) {
+        super(name, age, price);
     }
 
     @Override
@@ -16,5 +16,14 @@ public class Cat extends Animal {
         } else {
             System.out.println("...........");
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", price=" + price +
+                '}';
     }
 }

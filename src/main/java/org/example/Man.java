@@ -1,32 +1,21 @@
 package org.example;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.example.pet.Animal;
 
+@Getter
+@Setter
 public class Man {
     private final String name;
     private final int age;
+    private double money;
     private Animal pet;
 
-    public Man(String name, int age) {
+    public Man(String name, int age, double money) {
         this.name = name;
         this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public Animal getPet() {
-        return pet;
-    }
-
-    public void buyPet(Animal animal) {
-        this.pet = animal;
-        System.out.println(name + " buy '" + animal.getName() + '\'');
+        this.money = money;
     }
 
     @Override
