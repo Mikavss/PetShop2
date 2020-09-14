@@ -8,12 +8,12 @@ public class Dog extends Animal {
 
     @Override
     public void voice() {
-        System.out.println("Wav wav!!");
+        System.out.println("Гав!");
     }
 
     public void voice(byte foodCan) {
         if (foodCan < 5) {
-            System.out.println("Wav wav!!");
+            System.out.println("Гав!");
         } else {
             System.out.println("...........");
         }
@@ -21,10 +21,8 @@ public class Dog extends Animal {
 
     @Override
     public String toString() {
-        return "Dog{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", price=" + price +
-                '}';
+        return "Собака, имя: " + name +
+                ", возраст: " + age +
+                ", цена: " + price;
     }
 }

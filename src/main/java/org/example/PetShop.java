@@ -1,19 +1,14 @@
 package org.example;
 
-import org.example.pet.Animal;
-import org.example.pet.AnimalType;
-import org.example.pet.Cat;
-import org.example.pet.Dog;
-
-import static org.example.pet.AnimalType.CAT;
+import org.example.pet.*;
 
 public class PetShop {
-    private Animal dog = new Dog("Rex", 4, 50);
-    private Animal cat = new Cat("Murzik", 2, 100);
+    private Animal dog = new Dog("Рекс", 4, 15);
+    private Animal cat = new Cat("Мурзик", 2, 20);
 
     public PetShop() {
-        System.out.println("Welcome to 'PetShop'");
-        System.out.println("We have one cat and one dog");
+        System.out.println("Добро пожаловать в магазин животных!");
+        System.out.println("У нас есть одна собака и один кот");
     }
 
     public Animal getAnimal(AnimalType type) {
@@ -31,14 +26,22 @@ public class PetShop {
         if (man.getMoney() > pet.getPrice()) {
             man.setMoney(man.getMoney() - pet.getPrice());
             man.setPet(pet);
+
             if (pet instanceof Cat) {
                 cat = null;
+                if (man.getMoney() > dog.getPrice()) {
+                    System.err.println("Обратите внимание, " + man.getName() + ", у вас хватит денег на покупку Собаки!");
+                }
             } else if (pet instanceof Dog) {
                 dog = null;
+                if (man.getMoney() > cat.getPrice()) {
+                    System.err.println("Обратите внимание, " + man.getName() + ", у вас хватит денег на покупку Кота!");
+                }
             }
-            System.out.println(man.getName() + " buy pet - " + pet);
+
+            System.out.println(man.getName() + " купил:  " + pet);
         } else {
-            System.out.println("Sorry, but " + man.getName() + " has not enough money");
+            System.err.println("Простите, " + man.getName() + " у вас не хватает " + (pet.getPrice() - man.getMoney()) + " рублей");
         }
     }
 }

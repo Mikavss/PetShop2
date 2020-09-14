@@ -1,11 +1,11 @@
 package org.example;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.example.pet.Animal;
 
 @Getter
 @Setter
+
 public class Man {
     private final String name;
     private final int age;
@@ -20,10 +20,10 @@ public class Man {
 
     @Override
     public String toString() {
-        return "Man{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", pet=" + pet +
-                '}';
+        return "В магазине " + name +
+                ", ему " + age + " года" +
+                ", с собой у него " + money + " рублей" +
+                ", животное: " + pet;
     }
+
 }
